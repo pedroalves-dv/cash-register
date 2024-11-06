@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Cash Register App</h1>
+
+    <!-- Price Display -->
+    <div id="price-box">
+      <div class="label-amount">
+        <div class="price-label">Price</div>
+        <div class="price-amount">$1.87</div>
+      </div>
+      <button id="toggle-price-btn">New Price</button>
+      <!-- Static price for reference -->
+    </div>
+
+    <div id="app">
+      <div class="container">
+        <!-- Input Field -->
+        <input type="text" class="input-field" id="cash" placeholder="0" />
+
+        <!-- Keypad -->
+        <div class="keypad">
+          <div class="key">1</div>
+          <div class="key">2</div>
+          <div class="key">3</div>
+          <div class="key">4</div>
+          <div class="key">5</div>
+          <div class="key">6</div>
+          <div class="key">7</div>
+          <div class="key">8</div>
+          <div class="key">9</div>
+          <div class="key">0</div>
+          <div class="key">.</div>
+          <div class="key clear">Clear</div>
+        </div>
+        <button id="purchase-btn">Purchase</button>
+      </div>
+
+      <div class="register">
+        <!-- Total Display -->
+        <div id="change-due">
+          <div class="change-label">Change</div>
+          <div class="change-amount">$0.00</div>
+          <!-- This will display the change due amount -->
+        </div>
+        <div class="total">
+          <div class="register-label">Register</div>
+          <div class="register-amount">$200.00</div>
+          <!-- This will display the current register amount -->
+        </div>
+
+        <!-- Units Grid -->
+        <div class="units-grid" id="units-grid">
+          <div class="unit">
+            <div class="label">Penny</div>
+            <div class="amount">$1.01</div>
+          </div>
+          <div class="unit">
+            <div class="label">Nickel</div>
+            <div class="amount">$2.05</div>
+          </div>
+          <div class="unit">
+            <div class="label">Dime</div>
+            <div class="amount">$3.10</div>
+          </div>
+          <div class="unit">
+            <div class="label">Quarter</div>
+            <div class="amount">$4.25</div>
+          </div>
+          <div class="unit">
+            <div class="label">1</div>
+            <div class="amount">$90.00</div>
+          </div>
+          <div class="unit">
+            <div class="label">5</div>
+            <div class="amount">$55.00</div>
+          </div>
+          <div class="unit">
+            <div class="label">10</div>
+            <div class="amount">$20.00</div>
+          </div>
+          <div class="unit">
+            <div class="label">20</div>
+            <div class="amount">$60.00</div>
+          </div>
+          <div class="unit">
+            <div class="label">100</div>
+            <div class="amount">$100.00</div>
+          </div>
+        </div>
+        <!-- Reset Button -->
+        <button id="reset-btn">Reset Register</button>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
