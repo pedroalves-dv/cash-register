@@ -31,4 +31,3 @@ This project is licensed under the **MIT License** – feel free to use, modify,
 
 🔗 [GitHub](https://github.com/pedroalves-dv)  
 
----
