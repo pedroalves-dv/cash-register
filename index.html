@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="/cash-register/css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Cash Register App</h1>
+    <div class="header">
+      <p class="logo">Cash Register Software v0.1</p>
+    </div>
 
     <!-- Price Display -->
-    <div id="price-box">
-      <div class="label-amount">
-        <div class="price-label">Price</div>
-        <div class="price-amount">$1.87</div>
-      </div>
-      <button id="toggle-price-btn">New Price</button>
-    </div>
 
     <div id="app">
       <div class="container">
+        <div id="price-box">
+          <div class="label-amount">
+            <div class="price-label">Price</div>
+            <div class="price-amount">$1.87</div>
+          </div>
+        </div>
+        <button id="toggle-price-btn">New</button>
         <!-- Input Field -->
         <input type="text" class="input-field" id="cash" placeholder="0" />
 
@@ -37,23 +39,25 @@
           <div class="key">9</div>
           <div class="key">0</div>
           <div class="key">.</div>
-          <div class="key clear">Clear</div>
+          <div class="key clear">⇦</div>
         </div>
-        <button id="purchase-btn">Purchase</button>
+        <button id="purchase-btn">Enter</button>
       </div>
 
       <div class="register">
-   
         <div id="change-due">
-          <div class="change-label">Change</div>
-          <div class="change-amount">$0.00</div>
+          <div class="change-container">
+            <div class="change-label">Change</div>
+            <div class="change-amount">$0.00</div>
+          </div>
+          <div class="alert-screen"></div>
         </div>
 
         <div class="total">
           <div class="register-label">Register</div>
-          <div class="register-amount">$200.00</div>
+          <div class="register-amount">$0.00</div>
         </div>
-
+        <!-- <button id="toggle-register-btn">New</button> -->
         <!-- Units Grid -->
         <div class="units-grid" id="units-grid">
           <div class="unit">
@@ -94,9 +98,13 @@
           </div>
         </div>
         <!-- Reset Button -->
-        <button id="reset-btn">Reset Register</button>
+        <button id="reset-btn">↻</button>
       </div>
     </div>
-    <script src="/cash-register/js/script.js"></script>
+    <div class="footer">
+      <p>&copy; 2025 Cash Register Software v0.1</p>
+      <p>🌐︎ Lumen Inc.</p>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

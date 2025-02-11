@@ -1,5 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,57 +16,128 @@
 
 body,
 html {
-  margin-top: 30px;
-  font-family: "Roboto", serif;
+  font-family: "DM Sans", serif;
+  font-family: "Inter", serif;
+
+  font-optical-sizing: auto;
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c3c7cb;
+  color: #000;
+  
+}
+
+body {
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #000;
   display: flex;
   flex-direction: column;
+}
+
+/* Header */
+.header {
+  font-family: "VT323", serif;
+  display: flex;
+  justify-content: start;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #c3c7cb;
+  color: #000;
+  width: 100%;
+  height: 45px;
+  padding: 20px;
+  font-size: rem;
+  font-weight: 400;
+  border-bottom: 2px solid #fff;
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #000;
 }
 
-h1 {
-  margin-top: 40px;
-  margin-bottom: 90px;
-  font-size: 3rem;
+.footer {
+  font-family: "VT323", serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c3c7cb;
+  color: #000;
+  width: 100%;
+  height: 45px;
+  padding: 20px;
+  font-size: rem;
+  font-weight: 400;
+  box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
 }
 
-/* Styling for the #price-box */
+.logo {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  background-color: #c8c9cc;
+  color: rgb(0, 0, 0);
+  box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #000;
+}
+
+/* App Container */
+#app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 620px;
+  margin: auto auto;
+  /* margin-top: 60px; */
+  letter-spacing: -1px;
+}
+
+/* Price Box */
 #price-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dedede;
-  color: #333;
-  border-radius: 5px;
+  background-color: #e0e0e0;
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  height: 60px;
   width: 100%;
-  gap: 5rem;
+  font-family: "VT323", serif;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #000;
 }
 
 .label-amount {
   display: flex;
-  justify-content: start; /* Space between label and amount */
+  justify-content: space-between;
   align-items: center;
-  width: 50%; /* Takes up 50% of #price-box */
   font-size: 2rem;
-  padding-left: 20px;
-  padding-right: px;
-}
-
-.price-label {
-  font-weight: bold;
+  padding: 20px;
+  width: 96%;
+  height: 57px;
+  /* background: #e0e0e0; */
+  margin: auto;
 }
 
 .price-amount {
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
-#toggle-price-btn {
-  width: 50%;
+#toggle-price-btn,
+#toggle-register-btn {
+  font-family: "VT323", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  background-color: #e0e0e0;
+  color: #000;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #000;
+}
+
+#toggle-register-btn:hover {
+  background-color: #d0d0d0;
 }
 
 .price-amount.editing {
@@ -67,19 +146,10 @@ h1 {
 
 .selected {
   border: 1px solid #007bff; /* Blue border to indicate selection */
-  border-radius: 5px;
+  border-radius: 0;
 }
 
-#app {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 5rem;
-}
-
-/* KEYPAD */
-
-/* Container styling */
+/* Keypad */
 .container {
   width: 300px;
   display: flex;
@@ -87,88 +157,127 @@ h1 {
   gap: 10px;
 }
 
-/* Input field styling */
 .input-field {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 20px;
   text-align: right;
   border: 1px solid #333;
-  border-radius: 5px;
+  border-radius: 0;
+  background-color: #e0e0e0;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+  font-family: "Geo", serif;
+  font-family: "VT323", serif;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #000;
 }
 
-/* Keypad grid styling */
 .keypad {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-family: "Geo", serif;
+  font-family: "VT323", serif;
 }
 
-/* Key styling */
 .key {
-  font-size: 1.5rem;
+  /* font-weight: 700; */
+  font-size: 2rem;
   padding: 15px;
   text-align: center;
-  background-color: #333;
-  color: white;
-  border-radius: 5px;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 0;
   cursor: pointer;
   transition: background 0.2s;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #000;
 }
 
-/* Hover effect */
 .key:hover {
-  background-color: #555;
+  background-color: #d0d0d0;
 }
 
-/* Clear button styling */
 .clear {
   grid-column: 3; /* Place it in the last column */
-  background-color: gray;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 400;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #000;
 }
 
 .clear:hover {
-  background-color: #c9302c;
+  background-color: #d0d0d0;
 }
 
 button {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 20px;
-  text-align: center;
-  background-color: #333;
-  color: white;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 0;
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s;
+  letter-spacing: -1px;
+  height: 60px;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #000;
+}
+
+#purchase-btn,
+#reset-btn {
+  font-size: 2rem;
+  font-family: "VT323", serif;
 }
 
 button:hover {
-  background-color: #2c67c7;
+  background-color: #d0d0d0;
 }
 
-/* REGISTER */
-
+/* Register */
 #change-due {
+  font-family: "VT323", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 2rem;
+  height: 100%;
+  border: 1px solid #333;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #ffffff;
+}
+
+.change-container {
+  padding: 16px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 22px;
-  background-color: #333;
-  color: white;
-  border-radius: 5px;
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.alert-screen {
+  display: flex;
+  justify-content: start;
+  background-color: #000000;
+  color: #ffffff;
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 12px 20px;
+  box-shadow: inset 2px 2px 0 #ffffff, inset -2px -2px 0 #ffffff;
 }
 
-/* Styling for the "Change" label */
-.change-label {
-  font-weight: bold;
-}
-
-/* Styling for the amount display */
 .change-amount {
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .register {
@@ -176,75 +285,77 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-family: "Geo", serif;
+  font-family: "VT323", serif;
 }
 
-/* Styling for the .total container in .register */
 .total {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #dedede;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 0;
+  font-size: 2rem;
+  height: 60px;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #222;
 }
 
-/* Styling for the "Register" label */
-.register-label {
-  font-weight: bold;
-}
-
-/* Styling for the amount display */
 .register-amount {
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
-/* Grid container for units */
+/* Units Grid */
 .units-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 5px;
 }
 
-/* Unit box styling */
 .unit {
   text-align: center;
-  background-color: #dedede;
-  border-radius: 5px;
-  border: 1px solid #dedede;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 0;
+  box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #222;
 }
 
-/* Label and value styling within each unit */
 .unit .label {
-  font-size: 1rem;
-  margin-bottom: 5px;
+  font-size: 1.2rem;
 }
 
 .label {
-  background-color: #8f8d8d;
+  background-color: #d0d0d0;
+  color: #000;
   padding: 10px;
-  border-radius: 5px 5px 0px 0px;
-}
-.unit .amount {
-  font-size: 1.2rem;
-  font-weight: bold;
+  border-radius: 0;
 }
 
+.unit .amount,
 .amount {
+  font-size: 1.5rem;
   padding: 5px;
 }
 
-
+/* Media Queries */
 @media (max-width: 600px) {
   #app {
     flex-direction: column;
     align-items: center;
+    width: 80%;
   }
 
   .price-box {
-    display: flex;
     flex-direction: column;
   }
 
+  .container {
+    margin-bottom: 30px;
+  }
+
+  .register {
+    margin-bottom: 60px;
+  }
 }

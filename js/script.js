@@ -8,6 +8,7 @@ const changeDueDisplay = document.querySelector(".change-amount");
 const registerAmountDisplay = document.querySelector(".register-amount");
 const unitsGrid = document.getElementById("units-grid");
 const toggleButton = document.getElementById("toggle-price-btn");
+const alertScreen = document.querySelector(".alert-screen");
 
 // Initial values
 let price = 1.87; // Static price
@@ -39,7 +40,21 @@ function resetRegister() {
   currentRegister = JSON.parse(JSON.stringify(initialCid));
   updateRegisterDisplay();
   changeDueDisplay.textContent = `$0.00`;
-  clearDisplay();
+  typeMessage(alertScreen, "Register has been reset.");
+  // clearDisplay();
+}
+
+function typeMessage(element, message, speed = 20) {
+  element.textContent = "";
+  let i = 0;
+  function type() {
+    if (i < message.length) {
+      element.textContent += message.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
 }
 
 // Attach reset button event
@@ -54,15 +69,18 @@ toggleButton.addEventListener("click", function () {
     priceDisplay.style.color = "blue";
     toggleButton.textContent = "Set";
     clearDisplay();
-    display.placeholder = "Enter new price";
+    typeMessage(alertScreen, "Enter new price and press 'Set' to confirm.");
+    // alertScreen.textContent = "Enter new price and press 'Set' to confirm.";
+    
   } else {
     // Set new price and return to cash entry mode
     price = parseFloat(display.value);
     priceDisplay.textContent = `$${price.toFixed(2)}`;
-    priceDisplay.style.color = "#333"; // Reset display color
+    priceDisplay.style.color = "#333"; 
     toggleButton.textContent = "New Price";
-    display.placeholder = "0";
+    typeMessage(alertScreen, "New price has been set.");
     clearDisplay();
+  
   }
 });
 
@@ -86,7 +104,6 @@ function updatePrice(value) {
 function clearDisplay() {
   if (isPriceSelected) {
     display.value = 0;
-
     priceDisplay.textContent = `$0.00`;
   } else {
     display.value = "0";
@@ -97,13 +114,17 @@ function clearDisplay() {
 function calculateChange() {
   const cash = parseFloat(display.value);
   if (isNaN(cash) || cash <= 0) {
-    alert("Please enter a valid amount.");
+    typeMessage(alertScreen, "Please enter a valid amount.");
+    alertScreen.classList.add("error");
+
     return;
   }
 
   const changeDue = roundToTwoDecimals(cash - price);
   if (changeDue < 0) {
-    alert("Customer does not have enough money to purchase the item");
+    typeMessage(alertScreen, "Customer does not have enough money. Missing: $" + Math.abs(changeDue).toFixed(2));
+    alertScreen.classList.add("error");
+
     return;
   }
 
@@ -112,6 +133,8 @@ function calculateChange() {
 
   const changeGiven = deductChangeFromRegister(changeDue);
   changeDueDisplay.textContent = `$${changeGiven.toFixed(2)}`;
+  typeMessage(alertScreen, "Change has been calculated and deducted from the register.");
+  alertScreen.classList.remove("error");
   updateRegisterDisplay();
   clearDisplay();
 }
@@ -229,6 +252,7 @@ display.addEventListener("keydown", (e) => {
 document.querySelectorAll(".key").forEach((key) => {
   key.addEventListener("click", () => {
     const value = key.textContent;
+    alertScreen.textContent = "";
     if (key.classList.contains("clear")) clearDisplay();
     else appendToDisplay(value);
   });
